@@ -5,3 +5,7 @@ This example was taken from the Gillespie Algorithm wikipedia page: https://en.w
 
 gillespiesir.R contains a working example of SIR epidemic model implemented in R.
 gillespieseir.R contains a working example of SEIR epidemic model implemented in R.
+
+UPDATE: Now includes tau leaping examples
+
+tau0sir.R implements tau leaping on a SIR model with fixed step size tau.
