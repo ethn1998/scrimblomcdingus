@@ -8,10 +8,10 @@ popsize <- 1000 #Population size
 t0 <- 0.0
 tmax <- 5.0
 
-beta <- 6.0/popsize #Infection rate, traditionally normalized by popsize
+beta <- 6.0/popsize #Infection rate, probability of 
 gamma <- 2.0 #Recovery rate
 
-i0 <- 5 #Starting number of infected
+i0 <- 1.0*popsize/100 #Starting percentage of infected
 s0 <- popsize - i0
 r0 <- 0
 
@@ -33,7 +33,7 @@ while(t<tmax){
   R_beta <- beta*s*i #Infection rate
   R_gamma <- gamma*i #Removal rate
   RTOT <- R_beta + R_gamma #Total rate
-  print(sprintf("t:%.1e, pi:%.2e",t,R_beta/RTOT))
+  #print(sprintf("t:%.1e, pi:%.2e",t,R_beta/RTOT)) #Diagnostics
   #Reaction
   if(p < R_beta/RTOT){
     s <- s-1
